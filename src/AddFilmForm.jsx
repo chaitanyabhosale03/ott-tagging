@@ -148,7 +148,7 @@ const AddFilmForm = ({ isOpen, onClose, onSave, editingFilm = null }) => {
               <button
                 key={g}
                 className={`px-3 py-1 rounded border ${
-                  formData.genre.includes(g) ? 'bg-blue-600 text-white' : 'bg-gray-200'
+                  formData.genre.includes(g) ? 'bg-blue-600 text-red-800' : 'bg-gray-200'
                 }`}
                 onClick={() => handleMultiSelectChange('genre', g)}
               >
@@ -167,7 +167,7 @@ const AddFilmForm = ({ isOpen, onClose, onSave, editingFilm = null }) => {
               <button
                 key={t}
                 className={`px-3 py-1 rounded border ${
-                  formData.theme.includes(t) ? 'bg-purple-600 text-white' : 'bg-gray-200'
+                  formData.theme.includes(t) ? 'bg-purple-600 text-black' : 'bg-gray-200'
                 }`}
                 onClick={() => handleMultiSelectChange('theme', t)}
               >

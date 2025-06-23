@@ -15,10 +15,18 @@ export const filterFilms = (films, filters) => {
     const filmTitle = film.title || '';
     const filmTheme = Array.isArray(film.theme) ? film.theme : [];
     const filmDirector = film.director || '';
+    const filmGenre = Array.isArray(film.genre) ? film.genre : [];
+    const filmMood = film.mood || '';
+    const filmLanguage = film.language || '';
 
-    const matchesSearch = filmTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      filmTheme.some(t => (t || '').toLowerCase().includes(searchTerm.toLowerCase())) ||
-      filmDirector.toLowerCase().includes(searchTerm.toLowerCase());
+    const search = searchTerm.toLowerCase();
+    const matchesSearch =
+      filmTitle.toLowerCase().includes(search) ||
+      filmDirector.toLowerCase().includes(search) ||
+      filmGenre.some(g => (g || '').toLowerCase().includes(search)) ||
+      filmTheme.some(t => (t || '').toLowerCase().includes(search)) ||
+      filmMood.toLowerCase().includes(search) ||
+      filmLanguage.toLowerCase().includes(search);
 
     const matchesLanguage = language === 'All' || film.language === language;
     const matchesGenre = genre === 'All' || (Array.isArray(film.genre) ? film.genre.includes(genre) : false);

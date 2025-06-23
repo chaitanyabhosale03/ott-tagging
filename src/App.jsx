@@ -51,18 +51,9 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
-      <div className="flex justify-end p-4">
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-sm rounded"
-        >
-          {isDark ? '🌞 Light Mode' : '🌙 Dark Mode'}
-        </button>
-      </div>
-
+    <div className="min-h-screen transition-colors duration-300 bg-black text-black dark:bg-gray-900 dark:text-white">
       <div className="p-6 max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">OTT Film Metadata Tagging System</h1>
+        <h1 className="text-3xl font-bold mb-6 p-4">OTT Film Tagging System</h1>
 
         <SearchFilters
           filters={filters}
@@ -82,15 +73,21 @@ const App = () => {
             />
           ))}
         </div>
-
         <button
-          className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-full shadow-xl"
+          className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 dark:text-white text-white px-5 py-3 rounded-full shadow-xl"
           onClick={() => {
             setEditingFilm(null);
             setFormOpen(true);
           }}
         >
           + Add Film
+        </button>
+        <button
+          className="fixed top-6 right-6 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full shadow-xl z-50"
+          onClick={() => setIsDark((prev) => !prev)}
+          aria-label="Toggle dark mode"
+        >
+          Dark Mode
         </button>
 
         <AddFilmForm

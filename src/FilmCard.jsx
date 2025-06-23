@@ -14,7 +14,7 @@ const FilmCard = ({ film, onEdit, onDelete }) => {
 
   const getToneColor = (tone) => {
     const colors = {
-      'Uplifting': 'bg-blue-100 text-blue-800',
+      'Uplifting': 'bg-blue-100 text-blue-800' ,
       'Dark': 'bg-gray-800 text-white',
       'Heartwarming': 'bg-pink-100 text-pink-800',
       'Intense': 'bg-red-100 text-red-800',
@@ -31,7 +31,7 @@ const FilmCard = ({ film, onEdit, onDelete }) => {
   return (
     <div className="bg-white/10 backdrop-blur-lg rounded-xl p-5 hover:bg-white/20 transition-all duration-300 hover:scale-105 relative group">
       {/* Edit/Delete buttons */}
-      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1 dark:text-white">
         <button
           onClick={() => onEdit(film)}
           className="bg-blue-500 hover:bg-blue-600 text-white p-1 rounded text-xs"
@@ -47,8 +47,8 @@ const FilmCard = ({ film, onEdit, onDelete }) => {
       </div>
 
       <div className="flex items-start justify-between mb-3">
-        <h3 className="font-bold text-lg text-white leading-tight pr-16">{film.title}</h3>
-        <PlayCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
+        <h3 className="font-bold text-lg text-slate-600 leading-tight pr-16">{film.title}</h3>
+        <PlayCircle className="h-5 w-5 text-neutral-600 flex-shrink-0" />
       </div>
       
       <div className="space-y-3">
@@ -83,11 +83,11 @@ const FilmCard = ({ film, onEdit, onDelete }) => {
           </span>
         </div>
 
-        <div className="text-xs text-gray-300">
+        <div className="text-xs text-gray-300 dark:text-black">
           <strong>Themes:</strong> {film.theme.join(', ')}
         </div>
 
-        <div className="text-xs text-purple-300 bg-purple-900/30 p-2 rounded">
+        <div className={`text-xs p-2 rounded bg-slate-400 text-black dark:bg-purple-900/30 dark:text-purple-200`}>
           <Tag className="h-3 w-3 inline mr-1" />
           {film.mood}
         </div>

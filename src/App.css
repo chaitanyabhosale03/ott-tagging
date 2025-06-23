@@ -42,24 +42,16 @@ body, .App {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode, .dark-mode .App {
-  background-color: #111 !important;
-  color: #e0e0e0 !important;
-}
+/* Remove .dark-mode rules, use Tailwind's dark: classes instead. */
 
-.dark-mode .App-header {
-  background-color: #181a20 !important;
-  color: #e0e0e0 !important;
-}
-
-.dark-mode .App-link {
-  color: #90cdf4 !important;
+/* Optional: fallback for users without Tailwind dark mode */
+body {
+  background-color: #fff;
+  color: #181818;
 }
 
 button {
   color: #181818;
 }
 
-.dark-mode button {
-  color: #e0e0e0;
-}
+/* Remove .dark-mode overrides, as Tailwind dark: classes are now used in JSX */
