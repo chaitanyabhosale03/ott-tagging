@@ -5,7 +5,6 @@ import AddFilmForm from './AddFilmForm';
 import SearchFilters from './SearchFilters';
 import { metadataOptions, filmsDatabase } from './filmData';
 import { filterFilms } from './filterUtils';
-import '../src/dark.js';
 
 const App = () => {
   const [films, setFilms] = useState(filmsDatabase);
@@ -42,15 +41,7 @@ const App = () => {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto text-grey-800">
-      <button
-        className="fixed top-6 right-6 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full shadow-xl z-50"
-        onClick={() => window.Darkmode && window.Darkmode.toggle && window.Darkmode.toggle()}
-        aria-label="Toggle dark mode"
-      >
-        🌓 Toggle Dark Mode
-      </button>
-
+    <div className="p-6 max-w-7xl mx-auto text-white">
       <h1 className="text-3xl font-bold mb-6">OTT Film Metadata Tagging System</h1>
 
       <SearchFilters
@@ -73,7 +64,7 @@ const App = () => {
       </div>
 
       <button
-        className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-black px-5 py-3 rounded-full shadow-xl"
+        className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-full shadow-xl"
         onClick={() => {
           setEditingFilm(null);
           setFormOpen(true);

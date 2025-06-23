@@ -1,27 +1,14 @@
 // filterUtils.js - Filter and search utilities
 export const filterFilms = (films, filters) => {
-  // Provide default values to avoid undefined errors
-  const {
-    searchTerm = '',
-    language = 'All',
-    genre = 'All',
-    tone = 'All',
-    maturity = 'All',
-    mood = 'All',
-  } = filters || {};
-
+  const { searchTerm, language, genre, tone, maturity, mood } = filters;
+  
   return films.filter(film => {
-    // Defensive: ensure film fields are strings/arrays
-    const filmTitle = film.title || '';
-    const filmTheme = Array.isArray(film.theme) ? film.theme : [];
-    const filmDirector = film.director || '';
-
-    const matchesSearch = filmTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      filmTheme.some(t => (t || '').toLowerCase().includes(searchTerm.toLowerCase())) ||
-      filmDirector.toLowerCase().includes(searchTerm.toLowerCase());
-
+    const matchesSearch = film.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         film.theme.some(t => t.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                         film.director.toLowerCase().includes(searchTerm.toLowerCase());
+    
     const matchesLanguage = language === 'All' || film.language === language;
-    const matchesGenre = genre === 'All' || (Array.isArray(film.genre) ? film.genre.includes(genre) : false);
+    const matchesGenre = genre === 'All' || film.genre.includes(genre);
     const matchesTone = tone === 'All' || film.tone === tone;
     const matchesMaturity = maturity === 'All' || film.maturity === maturity;
     const matchesMood = mood === 'All' || film.mood === mood;

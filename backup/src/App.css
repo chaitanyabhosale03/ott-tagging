@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: #000;
 }
 
 .App-logo {
@@ -22,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(24, 24, 24);
+  color: white;
 }
 
 .App-link {
@@ -36,30 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-body, .App {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.dark-mode, .dark-mode .App {
-  background-color: #111 !important;
-  color: #e0e0e0 !important;
-}
-
-.dark-mode .App-header {
-  background-color: #181a20 !important;
-  color: #e0e0e0 !important;
-}
-
-.dark-mode .App-link {
-  color: #90cdf4 !important;
-}
-
-button {
-  color: #181818;
-}
-
-.dark-mode button {
-  color: #e0e0e0;
 }
