@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ott-tagging/static/css/main.5725f661.css",
-    "main.js": "/ott-tagging/static/js/main.86ac6645.js",
+    "main.css": "/ott-tagging/static/css/main.6bd4227b.css",
+    "main.js": "/ott-tagging/static/js/main.0604b8b8.js",
     "static/js/453.9c5b2099.chunk.js": "/ott-tagging/static/js/453.9c5b2099.chunk.js",
     "index.html": "/ott-tagging/index.html",
-    "main.5725f661.css.map": "/ott-tagging/static/css/main.5725f661.css.map",
-    "main.86ac6645.js.map": "/ott-tagging/static/js/main.86ac6645.js.map",
+    "main.6bd4227b.css.map": "/ott-tagging/static/css/main.6bd4227b.css.map",
+    "main.0604b8b8.js.map": "/ott-tagging/static/js/main.0604b8b8.js.map",
     "453.9c5b2099.chunk.js.map": "/ott-tagging/static/js/453.9c5b2099.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5725f661.css",
-    "static/js/main.86ac6645.js"
+    "static/css/main.6bd4227b.css",
+    "static/js/main.0604b8b8.js"
   ]
 }
